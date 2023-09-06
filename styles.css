@@ -1,3 +1,7 @@
 article.hidden {
-  display: none;
+    display: none;
+}
+
+p.hide-listing:hover {
+    cursor: pointer;
 }
