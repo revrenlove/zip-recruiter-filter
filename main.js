@@ -16,6 +16,7 @@ if (!allHiddenArticles) {
         p.addEventListener("click", () => {
             localStorage.setItem(article.key, "RevrenLove");
             hideListing(article.element);
+            allHiddenArticles.push(article.key);
         });
 
         article.element.appendChild(p);
