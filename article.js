@@ -26,5 +26,5 @@ if (!Article) {
         get key() {
             return `${this.jobTitle}-${this.company}`;
         }
-    }
+    };
 }
