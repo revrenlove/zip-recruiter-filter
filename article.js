@@ -1,6 +1,6 @@
 if (!Article) {
     const getJobTitle = (article) => {
-        let jobTitle = article.querySelector("a h2").innerHTML;
+        let jobTitle = article.querySelector("h2 a").innerHTML;
 
         if (/\</.test(jobTitle)) {
             jobTitle = jobTitle.substring(0, jobTitle.indexOf("<"));
@@ -10,7 +10,10 @@ if (!Article) {
     };
 
     const getCompanyName = (article) =>
-        article.querySelector(".company_name").innerHTML.trim();
+        article
+            .querySelector("p.normal-case")
+            .innerHTML.replace(/<[\s\S]+?>/g, "")
+            .trim();
 
     var Article = class {
         constructor(article) {
