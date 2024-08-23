@@ -1,5 +1,5 @@
-article.hidden {
-    display: none;
+.hidden {
+    display: none !important;
 }
 
 p.hide-listing {

@@ -1,9 +1,9 @@
 if (!Article) {
     const getJobTitle = (article) => {
-        let jobTitle = article.querySelector("h2 a").innerHTML;
+        let jobTitle = article.querySelector('h2 a').innerHTML;
 
         if (/\</.test(jobTitle)) {
-            jobTitle = jobTitle.substring(0, jobTitle.indexOf("<"));
+            jobTitle = jobTitle.substring(0, jobTitle.indexOf('<'));
         }
 
         return jobTitle;
@@ -11,15 +11,15 @@ if (!Article) {
 
     const getCompanyName = (article) =>
         article
-            .querySelector("p.normal-case")
-            .innerHTML.replace(/<[\s\S]+?>/g, "")
+            .querySelector('p.normal-case')
+            .innerHTML.replace(/<[\s\S]+?>/g, '')
             .trim();
 
     var Article = class {
-        constructor(article) {
-            this.jobTitle = getJobTitle(article);
-            this.company = getCompanyName(article);
-            this.element = article;
+        constructor(articleElement) {
+            this.jobTitle = getJobTitle(articleElement);
+            this.company = getCompanyName(articleElement);
+            this.element = articleElement;
         }
 
         jobTitle;
